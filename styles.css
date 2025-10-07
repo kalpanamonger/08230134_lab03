@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #262525;
+  color: #fff;
+}
+
+/* Navigation */
+.navlist {
+  display: flex;
+  gap: 2.5rem;
+  height: 10vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  background: rgba(38, 37, 37, 0.95);
+  z-index: 1000;
+}
+
+.navlist li {
+  list-style: none;
+}
+
+.navlist li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: #fff;
+  position: relative;
+  transition: 0.3s;
+}
+
+.navlist li a:hover,
+.navlist li a.active {
+  color: #5DB9EE;
+}
+
+.navlist li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: #5DB9EE;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.navlist li a:hover::after,
+.navlist li a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* --- Section Styling --- */
+
+/* Hide all sections by default */
+section {
+  display: none;
+  min-height: 100vh;
+  padding: 8rem 4rem 4rem;
+}
+
+/* Show the targeted section */
+section:target {
+  display: block;
+}
+
+/* Show homepage by default if no hash is in URL */
+body:not(:has(:target)) section#home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Homepage layout */
+.home-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left-container {
+  width: 60%;
+}
+
+.right-container {
+  width: 40%;
+  position: relative;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.icons .fa-brands {
+  font-size: 1.7rem;
+  color: #bbb;
+  transition: 0.3s;
+}
+
+.icons .fa-brands:hover {
+  color: #5DB9EE;
+  cursor: pointer;
+}
+
+.content .intro {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.content .intro span {
+  color: #3877FF;
+}
+
+.content h1 {
+  font-size: 4rem;
+  color: #5DB9EE;
+}
+
+.content .detail {
+  font-size: 1.1rem;
+  color: #fff;
+  max-width: 38rem;
+  margin: 1.1rem 0 3rem 0;
+  line-height: 1.8rem;
+}
+
+/* Buttons */
+.btn-container button {
+  border: 1px solid #5DB9EE;
+  font-size: 1rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-right: 1rem;
+  transition: 0.4s ease;
+}
+
+.btn-container button:nth-child(1) {
+  background: #5DB9EE;
+  color: #262525;
+}
+.btn-container button:nth-child(2) {
+  background: #fff;
+  color: #262525;
+}
+.btn-container button:nth-child(3) {
+  background: #262525;
+  color: #fff;
+}
+.btn-container button:nth-child(4) {
+  background: #3877FF;
+  color: #fff;
+}
+.btn-container button:nth-child(5) {
+  background: #5DB9EE;
+  color: #262525;
+}
+
+.btn-container button:hover {
+  background: transparent;
+  color: #5DB9EE;
+}
+
+/* Design Circles */
+.design .circle {
+  aspect-ratio: 1;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.design .circle:nth-child(1) {
+  background: linear-gradient(red 50%, #262525 50%);
+  width: 20rem;
+  z-index: -2;
+}
+
+.design .circle:nth-child(2) {
+  background: #bbb;
+  width: 15rem;
+  background-image: url("kalpana.jpg");
+  background-size: cover;
+  background-position: center;
+  border: 2px solid white;
+  box-shadow:
+    0 0 1rem #fff,
+    inset 0 0 1rem #fff,
+    0 0 2rem #3877FF,
+    inset 0 0 2rem #3877FF,
+    0 0 4rem #3877FF,
+    inset 0 0 4rem #3877FF;
+  z-index: -1;
+}
+
+/* Section headings */
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #5DB9EE;
+}
+
+/* Section paragraphs */
+section p {
+  font-size: 1.1rem;
+  color: #fff;
+  line-height: 1.8rem;
+}
+/* Project Cards */
+.project-card {
+  background: #333;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.project-card h3 {
+  color: #5DB9EE;
+  margin-bottom: 0.5rem;
+}
+
+/* Skills list */
+.skills-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.skills-list li i {
+  color: #5DB9EE;
+  margin-right: 0.5rem;
+}
+/* Light mode styles */
+body.light-mode {
+  background: #f0f0f0;
+  color: #262525;
+}
+
+body.light-mode .navlist li a {
+  color: #262525;
+}
+
+body.light-mode .navlist li a.active,
+body.light-mode .navlist li a:hover {
+  color: #3877FF;
+}
+
+body.light-mode h2 {
+  color: #3877FF;
+}
+
+body.light-mode .content .intro span {
+  color: #3877FF;
+}
+
+body.light-mode section p,
+body.light-mode .skills-list li {
+  color: #262525;
+}
+
+body.light-mode .project-card {
+  background: #e0e0e0;
+  color: #262525;
+}
+
+body.light-mode .btn-container button:hover {
+  color: #3877FF;
+}
+
+body.light-mode .skills-image img,
+body.light-mode .about-image img,
+body.light-mode .work-image img {
+  filter: brightness(1);
+}
